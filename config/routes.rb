@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :bmi_calculator, only: [:index]
+
   devise_for :users, controllers: {
                      sessions: 'users/sessions',
                      registrations: 'users/registrations'
