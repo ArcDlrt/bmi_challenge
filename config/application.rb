@@ -1,11 +1,11 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'active_record'
-require 'action_controller'
-require 'action_view'
-require 'action_mailer'
-require 'active_job'
-require 'sprockets'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_view/railtie'
+require 'action_mailer/railtie'
+require 'active_job/railtie'
+require 'sprockets/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
