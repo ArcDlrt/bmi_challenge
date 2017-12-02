@@ -1,3 +1,23 @@
+= content_for :javascript_onbody do
+  = javascript_include_tag('bmi_calculator.js')
+
 .row
-  .col-md-6
-    = form_tag(bmi_calculator)
+  .col-md-offset-3.col-md-6
+    = form_for(:bmi, url: calculate_bmi_calculators_path, remote: true) do |f|
+      .form-group
+        = f.select(:unit_system, { 'Metric system' => 'm', 'English system' => 'e' }, {}, {class: 'form-control'})
+      .form-group
+        = f.label :weight
+        = f.number_field :weight
+        %span#weight_unit
+          kg
+      .form-group
+        = f.label :height
+        = f.number_field :height, step: :any
+        %span#height_unit
+          m
+      .form-group
+        = f.submit 'Calculate BMI', class: 'btn btn-default'
+
+.row
+  #bmi_result.col-md-offset-3.col-md-6
