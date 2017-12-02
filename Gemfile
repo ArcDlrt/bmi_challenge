@@ -53,3 +53,6 @@ group :development do
   gem 'database_cleaner'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
